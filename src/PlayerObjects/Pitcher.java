@@ -1,5 +1,5 @@
 package PlayerObjects;
 
-public class Pitcher extends Player {
+public class Pitcher  {
     
 }

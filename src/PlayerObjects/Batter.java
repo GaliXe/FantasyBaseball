@@ -1,5 +1,8 @@
 package PlayerObjects;
 
-public class Batter extends Player{
-    
+public class Batter {
+
+    public Batter(){
+        super();
+    }
 }
