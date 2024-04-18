@@ -1,11 +1,11 @@
 package PlayerObjects;
 
 public class Player {
-    private int rank;
-    private String name;
-    private int age;
-    private String team;
-    protected String league;
+    int rank;
+    String name;
+    int age;
+    String team;
+    String league;
 
     public Player(int rank, String name, String team, String league){
         this.rank = rank;

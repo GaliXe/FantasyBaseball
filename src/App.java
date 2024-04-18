@@ -1,5 +1,8 @@
+import java.io.IOException;
+
 public class App {
-    public static void main(String[] args) {
-        System.err.println("Hello, World");
+    static Database db = new Database();
+    public static void main(String[] args) throws IOException {
+        db.initalizeDatabase();
     }
 }
