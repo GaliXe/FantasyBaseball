@@ -31,6 +31,7 @@ public class DraftManager {
                 }
                 break;
             case "b":
+            System.out.println("Rank | Name | Team | League | BA | OBP | SLG | OPS");
                 ArrayList<Batter> BcurrBase = db.batterDatabase;
                 for(int i = 0; i < 50; i++){
                     System.out.println(BcurrBase.get(i));

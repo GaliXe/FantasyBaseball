@@ -9,6 +9,8 @@ public class App {
 
     public static void main(String[] args) throws IOException {
         db.initalizeDatabase();
+        dm.intializeDraftTeams();
+        
         dm.listPlayers();
     }
 }
