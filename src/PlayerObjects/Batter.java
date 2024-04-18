@@ -45,4 +45,9 @@ public class Batter extends Player {
     public void setOPS(double oPS) {
         OPS = oPS;
     }
+
+    public String toString(){
+        return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague() 
+                + " | " + getBA() + " | " + getOBP() + " | " + getSLG() + " | " + getOPS();
+    }
 }

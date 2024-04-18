@@ -38,4 +38,9 @@ public class Pitcher extends Player{
     public void setSO9(double sO9) {
         SO9 = sO9;
     }
+
+    public String toString(){
+        return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague() 
+                + " | " + getERA() + " | " + getIP() + " | " + getWHIP() + " | " + getSO9();
+    }
 }

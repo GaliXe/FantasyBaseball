@@ -45,9 +45,5 @@ public class Player {
     public void setLeague(String league) {
         this.league = league;
     }
-
-    public String toString(){
-        return String.format("%-30s%-30s%10d", rank, name, team, league);
-    }
 }
 
