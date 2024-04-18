@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import PlayerObjects.Batter;
 import PlayerObjects.Pitcher;
+import Features.Database;
 
 public class Database {
     static ArrayList<Batter> batterDatabase = new ArrayList<Batter>();
@@ -20,6 +21,7 @@ public class Database {
             batreader.readLine();
             pitreader.readLine();
 
+            //Import Batters
             while((line = batreader.readLine()) != null)
             {
                 String [] values = line.split(";");
@@ -27,11 +29,12 @@ public class Database {
                                     Double.parseDouble(values[19]), Double.parseDouble(values[20]), Double.parseDouble(values[21])));
             }
 
+            //Import Pitchers
             while((line = pitreader.readLine()) != null)
             {
                 String [] values = line.split(";");
-                pitcherDatabase.add(new Pitcher(Integer.parseInt(values[0]), values[1], values[3], values[4], Double.parseDouble(values[7]), 
-                                    Double.parseDouble(values[14]), Double.parseDouble(values[28]), Double.parseDouble(values[32])));
+                pitcherDatabase.add(new Pitcher(Integer.parseInt(values[0]), values[1], values[3], values[4], Double.parseDouble(values[8]), 
+                                    Double.parseDouble(values[15]), Double.parseDouble(values[29]), Double.parseDouble(values[33])));
             }
 
             batreader.close();
