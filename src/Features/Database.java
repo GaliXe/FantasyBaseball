@@ -18,8 +18,8 @@ public class Database {
         try {
             BufferedReader batreader = new BufferedReader(new FileReader("statfiles/2023 MLB Player Stats - Batting.csv"));
             BufferedReader pitreader = new BufferedReader(new FileReader("statfiles/2023 MLB Player Stats - Pitching.csv"));
-            batreader.readLine();
-            pitreader.readLine();
+            batreader.readLine(); //Read the header first
+            pitreader.readLine(); //Read the header first
 
             //Import Batters
             while((line = batreader.readLine()) != null)

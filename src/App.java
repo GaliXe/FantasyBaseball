@@ -10,20 +10,22 @@ public class App {
 
     public static void main(String[] args) throws IOException {
         Scanner keyboard = new Scanner(System.in);
+        boolean quit = false;
         db.initalizeDatabase();
         dm.intializeDraftTeams();
 
-        String input = keyboard.nextLine();
-        String[] values = input.split(" ");
-
-        switch(values[0].toLowerCase()){
-            case "list":
-                dm.listPlayers();
-                break;
-            default: System.out.println("No command found. If you need help, type in HELP for a list of commands");
-                break;
+        while(!quit)
+        {
+            String input = keyboard.nextLine();
+            String[] values = input.split(" ");
+            switch(values[0].toLowerCase()){
+                case "list":
+                    dm.listPlayers();
+                    break;
+                default: System.out.println("No command found. If you need help, type in HELP for a list of commands");
+                    break;
+            }
         }
-        
-        dm.listPlayers();
+        keyboard.close();
     }
 }
