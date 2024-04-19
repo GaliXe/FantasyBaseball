@@ -7,6 +7,10 @@ import PlayerObjects.Pitcher;
 import PlayerObjects.Team.Team;
 
 public class DraftManager {
+    Team TeamA;
+    Team TeamB;
+    Team TeamC;
+    Team TeamD;
     Scanner input = new Scanner(System.in);
     static Database db = new Database();
 
@@ -19,7 +23,24 @@ public class DraftManager {
     }
 
     public void DRAFT(String team, String name){
-        
+        Team currentTeam;
+
+        switch(team){
+            case "teama":
+                currentTeam = TeamA;
+                break;
+            case "teamb":
+                currentTeam = TeamB;
+                break;
+            case "teamc":
+                currentTeam = TeamC;
+                break;
+            case "teamd":
+                currentTeam = TeamD;
+                break;
+            default: System.out.println("Invalid Team.");
+                break;
+        }
     }
 
     @SuppressWarnings("static-access")
@@ -30,17 +51,19 @@ public class DraftManager {
         
         switch (option) {
             case "p": //List out Pitchers
-                System.out.println("Rank | Name | Team | League | ERA | IP | WHIP | SO9");
+                System.out.println("Rank | Name | Team | League | EVAL ");
                 ArrayList<Pitcher> PcurrBase = db.pitcherDatabase;
                 for(int i = 0; i < 20; i++){
-                    System.out.println(PcurrBase.get(i));
+                    Pitcher currPit = PcurrBase.get(i);
+                    System.out.println(currPit.toStringEval() + " | " + currPit.getIP());
                 }
                 break;
             case "b": //List out Batters
-            System.out.println("Rank | Name | Team | League | BA | OBP | SLG | OPS");
+            System.out.println("Rank | Name | Team | League | EVAL");
                 ArrayList<Batter> BcurrBase = db.batterDatabase;
                 for(int i = 0; i < 20; i++){
-                    System.out.println(BcurrBase.get(i));
+                    Batter currBat = BcurrBase.get(i);
+                    System.out.println(currBat.toStringEval() + " | " + currBat.getBA());
                 }
                 break;
             default: System.out.println("Invalid Option. Try Again.");
@@ -48,11 +71,10 @@ public class DraftManager {
         }
     }
 
-    @SuppressWarnings("unused")
     public void intializeDraftTeams(){
-        Team TeamA = new Team("teama", new ArrayList<>());
-        Team TeamB = new Team("teamb", new ArrayList<>());
-        Team TeamC = new Team("teamc", new ArrayList<>());
-        Team TeamD = new Team("teamd", new ArrayList<>());
+        TeamA = new Team("teama", new ArrayList<>());
+        TeamB = new Team("teamb", new ArrayList<>());
+        TeamC = new Team("teamc", new ArrayList<>());
+        TeamD = new Team("teamd", new ArrayList<>());
     }
 }

@@ -8,6 +8,10 @@ public class Team {
     private String teamName;
     private ArrayList<Player> teamRoster = new ArrayList<>();
 
+    public Team() {
+        // Blank Constructor
+    }
+
     public Team(String teamName, ArrayList<Player> teamRoster){
         this.teamName = teamName;
         this.teamRoster = teamRoster;

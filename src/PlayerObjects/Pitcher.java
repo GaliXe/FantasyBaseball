@@ -43,4 +43,8 @@ public class Pitcher extends Player{
         return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague() 
                 + " | " + getERA() + " | " + getIP() + " | " + getWHIP() + " | " + getSO9();
     }
+
+    public String toStringEval(){
+        return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague();
+    }
 }

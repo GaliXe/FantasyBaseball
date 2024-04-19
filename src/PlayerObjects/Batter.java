@@ -50,4 +50,8 @@ public class Batter extends Player {
         return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague() 
                 + " | " + getBA() + " | " + getOBP() + " | " + getSLG() + " | " + getOPS();
     }
+
+    public String toStringEval(){
+        return getRank() + " | " + getName() + " | " + getTeam() + " | " + getLeague();
+    }
 }
