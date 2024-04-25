@@ -22,6 +22,14 @@ public class App {
                 case "list":
                     dm.listPlayers();
                     break;
+                case "idraft":
+                    if(values.length == 2){
+                        String fname;
+                        String lname;
+                        String playerName;
+                        
+                    }
+                    break;
                 default: System.out.println("No command found. If you need help, type in HELP for a list of commands");
                     break;
             }

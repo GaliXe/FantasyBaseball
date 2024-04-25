@@ -15,27 +15,27 @@ public class DraftManager {
     static Database db = new Database();
 
     public void IDRAFT(String name){
-        DRAFT("teama", name);
+        DRAFT(name, "a");
     }
 
-    public void ODRAFT(String team, String name){
-        DRAFT(team, name);
+    public void ODRAFT(String name, String team){
+        DRAFT(name, team);
     }
 
-    public void DRAFT(String team, String name){
+    public void DRAFT(String name, String team){
         Team currentTeam;
 
-        switch(team){
-            case "teama":
+        switch(team.toLowerCase()){
+            case "a":
                 currentTeam = TeamA;
                 break;
-            case "teamb":
+            case "b":
                 currentTeam = TeamB;
                 break;
-            case "teamc":
+            case "c":
                 currentTeam = TeamC;
                 break;
-            case "teamd":
+            case "d":
                 currentTeam = TeamD;
                 break;
             default: System.out.println("Invalid Team.");
